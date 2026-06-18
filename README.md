@@ -1,6 +1,6 @@
 # 🚀 Prodesk IT - Professional Landing Page
 
-![Prodesk IT Landing Page](./screenshot.png)
+![Prodesk IT Landing Page](./Screenshots/ss_01.png)
 
 ## 📌 Live Demo
 
