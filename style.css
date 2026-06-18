@@ -51,7 +51,7 @@ body {
   white-space: nowrap;
   border-width: 0;
 }
-
+/* ========== NAVBAR STARTING ========== */
 .navbar {
   position: sticky;
   top: 0;
@@ -536,7 +536,6 @@ body::before {
   line-height: 1.6;
 }
 
-/* PHASE 2 REQUIREMENT: Z-axis lifting with translateY */
 .feature-card:hover {
   transform: translateY(-12px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
@@ -859,7 +858,6 @@ body::before {
   }
 }
 
-/* Focus visible for keyboard navigation */
 *:focus-visible {
   outline: 2px solid var(--accent-color);
   outline-offset: 4px;
