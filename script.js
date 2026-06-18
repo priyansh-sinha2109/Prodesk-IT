@@ -10,7 +10,7 @@ navbarToggle.addEventListener("click", () => {
   navbarMenu.classList.toggle("active");
   navbarToggle.setAttribute("aria-expanded", isActive);
 
-  // Prevent body scroll w
+  // Prevent body scroll 
   document.body.style.overflow = isActive ? "hidden" : "";
 });
 
