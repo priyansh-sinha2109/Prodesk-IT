@@ -10,11 +10,11 @@ navbarToggle.addEventListener("click", () => {
   navbarMenu.classList.toggle("active");
   navbarToggle.setAttribute("aria-expanded", isActive);
 
-  // Prevent body scroll when menu is open
+  // Prevent body scroll w
   document.body.style.overflow = isActive ? "hidden" : "";
 });
 
-// Close mobile menu when clicking a link
+// Close mobile menu 
 navbarLinks.forEach((link) => {
   link.addEventListener("click", () => {
     navbarToggle.classList.remove("active");
@@ -23,8 +23,6 @@ navbarLinks.forEach((link) => {
     document.body.style.overflow = "";
   });
 });
-
-// Close mobile menu when clicking outside
 document.addEventListener("click", (e) => {
   if (
     !navbarMenu.contains(e.target) &&
@@ -37,8 +35,6 @@ document.addEventListener("click", (e) => {
     document.body.style.overflow = "";
   }
 });
-
-// Close menu on Escape key
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && navbarMenu.classList.contains("active")) {
     navbarToggle.classList.remove("active");
@@ -60,7 +56,7 @@ if (savedTheme === "dark") {
   themeToggle.textContent = "🌙";
   themeToggle.setAttribute("aria-label", "Switch to dark mode");
 } else {
-  // Default to light mode if no preference is saved
+  // Default to light mode 
   document.body.classList.remove("darkmode");
   themeToggle.textContent = "🌙";
   themeToggle.setAttribute("aria-label", "Switch to dark mode");
@@ -112,8 +108,6 @@ newsletterForm.addEventListener("submit", (e) => {
     alert("Please enter a valid email address.");
   }
 });
-
-// ========== PERFORMANCE: Lazy load Font Awesome ==========
 if ("IntersectionObserver" in window) {
   const lazyIcons = document.querySelectorAll(".fa-brands");
   const iconObserver = new IntersectionObserver((entries) => {
