@@ -38,20 +38,32 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// Close menu on Escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && navbarMenu.classList.contains("active")) {
+    navbarToggle.classList.remove("active");
+    navbarMenu.classList.remove("active");
+    navbarToggle.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+});
+
 // ========== THEME TOGGLE ==========
-// Load saved theme on page load
 const savedTheme = localStorage.getItem("theme");
 
 if (savedTheme === "dark") {
   document.body.classList.add("darkmode");
   themeToggle.textContent = "☀️";
+  themeToggle.setAttribute("aria-label", "Switch to light mode");
 } else if (savedTheme === "light") {
   document.body.classList.remove("darkmode");
   themeToggle.textContent = "🌙";
+  themeToggle.setAttribute("aria-label", "Switch to dark mode");
 } else {
   // Default to light mode if no preference is saved
   document.body.classList.remove("darkmode");
   themeToggle.textContent = "🌙";
+  themeToggle.setAttribute("aria-label", "Switch to dark mode");
   localStorage.setItem("theme", "light");
 }
 
@@ -61,9 +73,11 @@ themeToggle.addEventListener("click", () => {
 
   if (isDarkMode) {
     themeToggle.textContent = "☀️";
+    themeToggle.setAttribute("aria-label", "Switch to light mode");
     localStorage.setItem("theme", "dark");
   } else {
     themeToggle.textContent = "🌙";
+    themeToggle.setAttribute("aria-label", "Switch to dark mode");
     localStorage.setItem("theme", "light");
   }
 });
@@ -73,9 +87,8 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute("href"));
-
     if (target) {
-      const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+      const offsetTop = target.offsetTop - 80;
       window.scrollTo({
         top: offsetTop,
         behavior: "smooth",
@@ -92,8 +105,24 @@ newsletterForm.addEventListener("submit", (e) => {
   const emailInput = document.querySelector(".news-email");
   const email = emailInput.value;
 
-  if (email) {
+  if (email && email.includes("@")) {
     alert(`Thank you for subscribing with: ${email}`);
     emailInput.value = "";
+  } else {
+    alert("Please enter a valid email address.");
   }
 });
+
+// ========== PERFORMANCE: Lazy load Font Awesome ==========
+if ("IntersectionObserver" in window) {
+  const lazyIcons = document.querySelectorAll(".fa-brands");
+  const iconObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("loaded");
+      }
+    });
+  });
+
+  lazyIcons.forEach((icon) => iconObserver.observe(icon));
+}

@@ -3,85 +3,121 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prodesk IT | Digital Marketing Solutions</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
     <meta
       name="description"
       content="Prodesk IT provides web development, SEO, and digital marketing solutions to help businesses grow online."
     />
+    <meta name="theme-color" content="#0071ff" />
+    <title>Prodesk IT | Digital Marketing Solutions</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      />
+    </noscript>
   </head>
   <body>
     <!-- Navbar Starting -->
-    <nav class="navbar">
+    <nav class="navbar h-20" role="navigation" aria-label="Main navigation">
       <div class="navbar-container">
-        <a href="index.html" class="navbar-logo">Prodesk IT</a>
-        <button class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+        <a href="index.html" class="navbar-logo" aria-label="Prodesk IT Home"
+          >Prodesk IT</a
+        >
+        <button
+          class="theme-toggle"
+          aria-label="Toggle Dark Mode"
+          title="Toggle theme"
+        >
+          🌙
+        </button>
         <button
           class="navbar-toggle"
-          aria-label="Toggle Navigation"
+          aria-label="Toggle Navigation Menu"
           aria-expanded="false"
+          aria-controls="navbar-menu"
         >
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
         </button>
-        <ul class="navbar-menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul class="navbar-menu" id="navbar-menu" role="menubar">
+          <li role="none"><a href="#home" role="menuitem">Home</a></li>
+          <li role="none"><a href="#about" role="menuitem">About</a></li>
+          <li role="none"><a href="#services" role="menuitem">Services</a></li>
+          <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
         </ul>
       </div>
     </nav>
     <!-- Navbar Ending -->
 
     <!-- Hero Starting -->
-    <section class="main-section" id="home">
-      <div class="content-left">
-        <p class="section-label">Innovative Solutions for Modern Businesses</p>
-        <h1 class="section-title">We Build Digital Experiences</h1>
-        <p class="section-description">
-          Helping businesses grow through innovative web development, SEO, and
-          digital marketing strategies that deliver measurable results.
-        </p>
-        <div class="button-group">
-          <a href="#services" class="start-button">Get Started</a>
+    <main>
+      <section class="main-section" id="home" aria-labelledby="hero-title">
+        <div class="content-left">
+          <p class="section-label">
+            Innovative Solutions for Modern Businesses
+          </p>
+          <h1 class="section-title" id="hero-title">
+            We Build Digital Experiences
+          </h1>
+          <p class="section-description">
+            Helping businesses grow through innovative web development, SEO, and
+            digital marketing strategies that deliver measurable results.
+          </p>
+          <div class="button-group">
+            <a href="#services" class="start-button">Get Started</a>
+          </div>
         </div>
-      </div>
-      <div class="content-right">
-        <div class="image-container">
-          <img
-            src="./assets/images/hero-images.png"
-            alt="Digital marketing team illustration"
-            class="section-image"
-            loading="lazy"
-          />
+        <div class="content-right">
+          <div class="image-container">
+            <img
+              src="./assets/images/hero-images.png"
+              alt="Digital marketing team collaborating on projects"
+              class="section-image"
+              width="500"
+              height="450"
+              loading="eager"
+            />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
     <!-- Hero Ending -->
 
     <!-- Services Starting -->
-    <section class="feature-container" id="services">
+    <section
+      class="feature-container"
+      id="services"
+      aria-labelledby="services-title"
+    >
       <div class="feature-content">
         <div class="main-info">
-          <h2 class="main-title">Our Services</h2>
+          <h2 class="main-title" id="services-title">Our Services</h2>
           <p class="main-description">
             Helping businesses succeed through innovative digital solutions.
           </p>
         </div>
-        <div class="feature-grid">
+        <div class="feature-grid" role="list">
           <!-- Card 1 -->
-          <div class="feature-card">
-            <div class="icon-container">
+          <article class="feature-card" role="listitem">
+            <div class="icon-container" aria-hidden="true">
               <img
                 src="./assets/icons/seo.svg"
-                alt="SEO Icon"
+                alt=""
                 class="feature-svg"
+                width="35"
+                height="35"
                 loading="lazy"
               />
             </div>
@@ -93,14 +129,16 @@
                 your online visibility.
               </p>
             </div>
-          </div>
+          </article>
           <!-- Card 2 -->
-          <div class="feature-card">
-            <div class="icon-container">
+          <article class="feature-card" role="listitem">
+            <div class="icon-container" aria-hidden="true">
               <img
                 src="./assets/icons/web-dev.svg"
-                alt="Web Development Icon"
+                alt=""
                 class="feature-svg"
+                width="35"
+                height="35"
                 loading="lazy"
               />
             </div>
@@ -111,14 +149,16 @@
                 exceptional experiences and help your business stand out online.
               </p>
             </div>
-          </div>
+          </article>
           <!-- Card 3 -->
-          <div class="feature-card">
-            <div class="icon-container">
+          <article class="feature-card" role="listitem">
+            <div class="icon-container" aria-hidden="true">
               <img
                 src="./assets/icons/digital-marketing.svg"
-                alt="Digital Marketing Icon"
+                alt=""
                 class="feature-svg"
+                width="35"
+                height="35"
                 loading="lazy"
               />
             </div>
@@ -130,35 +170,44 @@
                 results.
               </p>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
     <!-- Services Ending -->
 
     <!-- Newsletter Starting -->
-    <section class="newsletter-container">
+    <section class="newsletter-container" aria-labelledby="newsletter-title">
       <div class="newsletter-content">
         <!-- Left Part -->
         <div class="news-left">
           <img
             src="./assets/images/newsletter.jpg"
-            alt="Newsletter Illustration"
+            alt="Newsletter subscription illustration"
+            width="600"
+            height="400"
             loading="lazy"
           />
         </div>
         <!-- Right Part -->
         <div class="news-right">
           <div class="news-info">
-            <h2 class="news-title">Get the latest updates</h2>
+            <h2 class="news-title" id="newsletter-title">
+              Get the latest updates
+            </h2>
             <p class="news-desc">Sign up for our newsletter</p>
           </div>
-          <form class="news-form">
+          <form class="news-form" aria-label="Newsletter signup form">
+            <label for="email-input" class="visually-hidden"
+              >Email address</label
+            >
             <input
               type="email"
+              id="email-input"
               class="news-email"
               placeholder="Enter your email"
               required
+              aria-required="true"
             />
             <button class="news-send-button" type="submit">Send</button>
           </form>
@@ -174,7 +223,7 @@
     <!-- Newsletter Ending -->
 
     <!-- Footer Starting -->
-    <footer class="footer-container" id="contact">
+    <footer class="footer-container" id="contact" role="contentinfo">
       <div class="footer-content">
         <!-- Left Section -->
         <div class="footer-left">
@@ -183,24 +232,24 @@
             Empowering businesses with innovative digital solutions that drive
             growth and deliver measurable success.
           </p>
-          <div class="social-icons">
-            <a href="#" aria-label="Instagram">
-              <i class="fa-brands fa-instagram"></i>
+          <div class="social-icons" role="list" aria-label="Social media links">
+            <a href="#" aria-label="Instagram" role="listitem">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             </a>
-            <a href="#" aria-label="Twitter">
-              <i class="fa-brands fa-twitter"></i>
+            <a href="#" aria-label="Twitter" role="listitem">
+              <i class="fa-brands fa-twitter" aria-hidden="true"></i>
             </a>
-            <a href="#" aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin-in"></i>
+            <a href="#" aria-label="LinkedIn" role="listitem">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
             </a>
-            <a href="#" aria-label="Github">
-              <i class="fa-brands fa-github"></i>
+            <a href="#" aria-label="Github" role="listitem">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
             </a>
           </div>
         </div>
 
         <!-- Links Section -->
-        <div class="footer-grid">
+        <nav class="footer-grid" aria-label="Footer navigation">
           <div class="footer-column">
             <h3>Services</h3>
             <ul>
@@ -227,7 +276,7 @@
               <li><a href="#">Help Center</a></li>
             </ul>
           </div>
-        </div>
+        </nav>
       </div>
 
       <div class="footer-bottom">
