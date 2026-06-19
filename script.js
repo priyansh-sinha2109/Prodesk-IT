@@ -36,8 +36,6 @@ document.addEventListener("click", (e) => {
     document.body.style.overflow = "";
   }
 });
-
-// Close menu on Escape key
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && navbarMenu.classList.contains("active")) {
     navbarToggle.classList.remove("active");
@@ -110,8 +108,6 @@ newsletterForm.addEventListener("submit", (e) => {
     alert("Please enter a valid email address.");
   }
 });
-
-// ========== PERFORMANCE: Lazy load Font Awesome ==========
 if ("IntersectionObserver" in window) {
   const lazyIcons = document.querySelectorAll(".fa-brands");
   const iconObserver = new IntersectionObserver((entries) => {
