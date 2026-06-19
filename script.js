@@ -10,11 +10,10 @@ navbarToggle.addEventListener("click", () => {
   navbarMenu.classList.toggle("active");
   navbarToggle.setAttribute("aria-expanded", isActive);
 
-  // Prevent body scroll when menu is open
   document.body.style.overflow = isActive ? "hidden" : "";
 });
 
-// Close mobile menu when clicking a link
+// Close mobile menu
 navbarLinks.forEach((link) => {
   link.addEventListener("click", () => {
     navbarToggle.classList.remove("active");
@@ -24,7 +23,7 @@ navbarLinks.forEach((link) => {
   });
 });
 
-// Close mobile menu when clicking outside
+// Close mobile menu
 document.addEventListener("click", (e) => {
   if (
     !navbarMenu.contains(e.target) &&
@@ -60,7 +59,7 @@ if (savedTheme === "dark") {
   themeToggle.textContent = "🌙";
   themeToggle.setAttribute("aria-label", "Switch to dark mode");
 } else {
-  // Default to light mode if no preference is saved
+  // Default to light mode
   document.body.classList.remove("darkmode");
   themeToggle.textContent = "🌙";
   themeToggle.setAttribute("aria-label", "Switch to dark mode");
@@ -82,7 +81,6 @@ themeToggle.addEventListener("click", () => {
   }
 });
 
-// ========== SMOOTH SCROLL ENHANCEMENT ==========
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
